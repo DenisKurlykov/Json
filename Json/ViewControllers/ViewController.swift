@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let urlAddress = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
+    let url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=margarita"
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     }
 
     private func getData() {
-        guard let url = URL(string: urlAddress) else { return }
+        guard let url = URL(string: url) else { return }
         URLSession.shared.dataTask(with: url) { data, _, error in
             guard let data = data else {
                 print(error?.localizedDescription ?? "No error description")
